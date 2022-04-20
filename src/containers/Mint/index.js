@@ -25,13 +25,13 @@ const Mint = () => {
   useEffect(() => {
     const fetchData = async () => {
       if (!!account) {
-        let mintPrice = await getPrice(library, account)
+        let mintPrice = await getPrice(mintCount, library, account)
         setMintPrice(mintPrice)
       }
     }
 
     fetchData()
-  }, [library, account])
+  }, [library, account, mintCount])
 
   const alertInfo = (message) =>
     alert.info(message, {

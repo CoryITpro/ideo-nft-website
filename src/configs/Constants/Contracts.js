@@ -9,9 +9,9 @@ export const contractAddresses = {
       "https://etherscan.io/token/0x7b9C9C846a5a9ADaAab0B6cc224f9AF47405F721",
   },
   [ETH_ROPSTEN]: {
-    address: "0xf9674832b82e08926d323219016cb16d65dceedb",
+    address: "0xea2195194bd44742b7e81998a8b3729ad02b8a82",
     explorerUrl:
-      "https://rinkeby.etherscan.io/token/0xf9674832b82e08926d323219016cb16d65dceedb",
+      "https://ropsten.etherscan.io/token/0xea2195194bd44742b7e81998a8b3729ad02b8a82",
   },
   [ETH_TESTNET]: {
     address: "0x836f1f77311516c513ef4a5e7cbfa60738fe4f06",

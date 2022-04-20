@@ -62,13 +62,13 @@ export const getOccupiedIds = async (library, account) => {
   }
 }
 
-export const getPrice = async (library, account) => {
+export const getPrice = async (mintCount, library, account) => {
   const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
   try {
-    let price = await contract.cost()
+    let price = await contract.getPrice(mintCount)
     return ethers.BigNumber.from(price).div(1e14).toNumber()
   } catch (err) {
     console.log(err.message)
@@ -102,7 +102,7 @@ export const mintNFT = async (
     getProviderOrSigner(library, account)
   )
 
-  let price = await getPrice(library, account)
+  let price = await getPrice(mintCount, library, account)
 
   try {
     var txhash
