@@ -68,8 +68,7 @@ export const getPrice = async (library, account) => {
   )
 
   try {
-    let price = await contract.getPrice()
-
+    let price = await contract.cost()
     return ethers.BigNumber.from(price).div(1e14).toNumber()
   } catch (err) {
     console.log(err.message)
@@ -98,7 +97,6 @@ export const mintNFT = async (
   alertSuccess,
   alertError,
   mintCount,
-  isPublic
 ) => {
   const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
@@ -108,17 +106,10 @@ export const mintNFT = async (
 
   try {
     var txhash
-    if (isPublic) {
-       txhash= await contract.publicSaleMint(mintCount, {
-        value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
-        from: account,
-      })
-    } else {
-      txhash = await contract.whitelistMint(mintCount, {
-        value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
-        from: account,
-      })
-    }
+    txhash= await contract.mint(mintCount, {
+      value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
+      // from: account,
+    })
       
 
     alertInfo("Tx Submitted")

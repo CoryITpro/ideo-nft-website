@@ -1,7 +1,6 @@
 import { useRoutes } from "react-router-dom"
 
 import Mint from "./Mint"
-import WLMint from "./WLMint"
 
 // import Navbar from "components/Navbar"
 import Footer from "components/Footer"
@@ -15,7 +14,6 @@ import { AppRoutes } from "constants/Ui"
 const AppRouters = () => {
   let routes = useRoutes([
     { path: AppRoutes.DASHBOARD, element: <Mint /> },
-    { path: AppRoutes.WLMINT, element: <WLMint /> },
     { path: AppRoutes.COMING_SOON, element: <ComingSoon /> },
     { path: AppRoutes.NOT_FOUND, element: <NotFound /> },
   ])
@@ -23,7 +21,7 @@ const AppRouters = () => {
   return (
     <>
       <UseScrollToTop>{routes}</UseScrollToTop>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

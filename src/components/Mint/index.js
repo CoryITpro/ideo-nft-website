@@ -30,7 +30,7 @@ const Mint = ({
                 4
               )}...${account.slice(-4)}`}</span>
             </div>
-            <h3>Get your Shmurfs</h3>
+            {/* <h3>Get your Shmurfs</h3> */}
             {/* <span className="mint-ticker">
               {ticker < 500
                 ? "😎 Go Go Go Fam 😎"

@@ -72,8 +72,7 @@ const Mint = () => {
         alertInfo,
         alertSuccess,
         alertError,
-        mintCount,
-        true
+        mintCount
       )
     }
   }
